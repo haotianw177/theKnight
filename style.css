@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Gerstner Programm';
+  src: url('fonts/GerstnerProgramm-BookOne.woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+  appearance: none;
+}
+
+html {
+  user-select: none;
+}
+
+body {
+  font-family: 'Gerstner Programm', sans-serif;
+  display: flex;
+  font-size: 2.2vw;
+  text-transform: uppercase;
+  line-height: 1;
+  height: 100vh;
+  overflow: hidden;
+  padding-left: 0.2em;
+  padding-top: 0.3em;
+  
+}
+
+.col {
+  min-width: 200px; /* or any other minimum width that fits your design */
+  max-width: 25%;  box-sizing: border-box; /* Include padding and border in the element's width */
+  overflow-wrap: break-word; /* Ensures text breaks to prevent overflow */
+  word-wrap: break-word; /* Fallback for older browsers */
+  margin: 0 10px; /* Optional: adds some space between columns */
+}
+
+/* Optional: Ensure the content does not overflow the column width */
+.col p {
+  text-transform: none;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  /* Add other styles as needed */
+}
+
+
+.col img {
+  width: 100%;  /* Make image width equal to column width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove any default white space beneath images */
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: white !important;
+  animation-name: out;
+  animation-duration: 1s;
+  background-color: rgba(0,50,255,0);
+  animation-timing-function: ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+  background-color: rgba(0,50,255,1);
+  animation-name: over;
+  animation-duration: 0s;
+}
+
+@keyframes over {
+  from {background-color: rgba(0,50,255,0); color: rgba(0,50,255,1);}
+  to {background-color: rgba(0,50,255,1); color: black;}
+}
+
+@keyframes out {
+  from {background-color: rgba(0,50,255,1); color: black;}
+  to {background-color: rgba(0,50,255,0); color: rgba(0,50,255,1);}
+}
